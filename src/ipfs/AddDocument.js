@@ -66,7 +66,6 @@ class AddDocument extends Component {
         return (
             <div>
                 <form onSubmit={this.onSubmit}>
-                    {/* <TextField id = "filetype" required =  */}
                     <input type="file" onChange={this.captureFile} />
                     <input type="submit" />
                 </form>
