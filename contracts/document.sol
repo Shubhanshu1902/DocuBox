@@ -5,19 +5,19 @@ import "hardhat/console.sol";
 
 contract document{
     struct doc{
-        string type_name; 
+        string type_name; // eg. aadhaar card, pan card, etc.
         string hash_data; // ipvf hash
         
         
     }
 
     struct user{
-        doc[] docs;
-        uint nDocs;
+        doc[] docs; // Array of uploaded Documents
+        uint nDocs; // number of uploaded Documents
 
     }
 
-    constructor() payable {
+    constructor() public {
 
     }
 
