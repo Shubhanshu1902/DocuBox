@@ -1,0 +1,22 @@
+.buttonsetting {
+    position: absolute;
+    width: 118px;
+    height: 36px;
+    left: 479px;
+    top: 66px;
+
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 36px;
+    /* identical to box height */
+
+    text-align: center;
+    border: 0px;
+    color: #2a2c34;
+}
+
+.buttonsetting:hover {
+    transform: scale(1.2);
+}

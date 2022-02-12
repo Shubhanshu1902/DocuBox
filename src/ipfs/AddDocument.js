@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Buffer } from "buffer";
 import { create } from "ipfs-http-client";
 import { TextField } from "@mui/material";
+import { Box } from "@mui/system";
 
 
 const client = create({
@@ -12,6 +13,20 @@ const client = create({
 });
 
 class AddDocument extends Component {
+    styles = theme => ({
+        textField: {
+            width: "90%",
+            marginLeft: "auto",
+            marginRight: "auto",
+            paddingBottom: 0,
+            marginTop: 0,
+            fontWeight: 500,
+        },
+        input: {
+            color: "white",
+        },
+    });
+
     constructor(props) {
         super(props);
         this.state = { buffer: null, filetype: null, fileHash: null };
@@ -40,8 +55,8 @@ class AddDocument extends Component {
         e.preventDefault();
         try {
             const created = await client.add(this.state.buffer);
-            this.setState({fileHash: created.path})
-            // console.log(this.state);
+            this.setState({ fileHash: created.path });
+            console.log(this.state);
         } catch (error) {
             console.error(error);
         }
@@ -51,8 +66,7 @@ class AddDocument extends Component {
         return (
             <div>
                 <form onSubmit={this.onSubmit}>
-                    <TextField id = "filetype" required = 
-                    <input type="text" onChange={this.getTitle} />
+                    {/* <TextField id = "filetype" required =  */}
                     <input type="file" onChange={this.captureFile} />
                     <input type="submit" />
                 </form>

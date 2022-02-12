@@ -1,9 +1,11 @@
-import AddDocument from "./ipfs/AddDocument";
+import Navbar from "./components/Navbar";
+import React from "react";
 
 function App() {
     return (
-        <div className="App">
-            <AddDocument />
+        // <AddDocument />
+        <div className="App container mt-5">
+                <Navbar />
         </div>
     );
 }
