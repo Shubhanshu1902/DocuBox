@@ -1,15 +1,16 @@
 
 .centericon {
     display: flex;
-    position: relative;
+    position: absolute;
     width: 87.65vh;
     height: 87.65vh;
-    left: 28.1%;
+    left: 28.3vw;
     top: 7.22vh;
     background-color: transparent;
     border: 8px solid #00c2ff;
     box-sizing: border-box;
     border-radius: 50%;
+    font-size: 16px
 }
 @keyframes openingText
 {
@@ -35,26 +36,25 @@
     }
 }
 .upperlock img {
-    position: relative;
-    width: 48%;
-    left: 23.75%;
-    top: 4%;
+    position: absolute;
+    width: 30%;
+    left: 33%;
+    padding-top: 7%;
     filter: drop-shadow(8px 8px 4px rgba(0, 0, 0, 0.25));
 }
 
 .docubox {
-    position: relative;
-    width: 39.84vw;
-    height: 20vh;
-    left: 2.5%;
-    top: 28%;
+    position: absolute;
+    width: 79.4%;
+    height: 22.8%;
+    left: 9.5%;
+    top: 22%;
     font-family: "Poppins", sans-serif;
     font-style: normal;
     font-weight: 900;
-    font-size: 144px;
+    font-size: 9em;
     line-height: 216px;
     /* identical to box height */
-
     text-align: center;
     color: #2b2c34;
     user-select: none;
@@ -64,10 +64,10 @@
 }
 
 .box {
-    position: relative;
-    width: 14.68vw;
-    height: 13vh;
-    left: 55.67%;
+    position: absolute;
+    width: 44%;
+    height: 70%;
+    left: 56%;
     top: 23%;
     border: 5px solid #2a2c34;
     box-sizing: border-box;
@@ -75,13 +75,11 @@
 }
 
 .intro {
-    position: relative;
-
-    position: relative;
-    width: 30vw;
-    height: 60px;
-    left: 15%;
-    top: 48%;
+    position: absolute;
+    width: 70%;
+    height: 8%;
+    left: 14.73%;
+    top: 44%;
 
     font-family: "Poppins", sans-serif;
     font-style: normal;
@@ -95,18 +93,16 @@
 }
 
 .intro-sol {
-    position: relative;
-
-    position: relative;
-    width: 30vw;
-    height: 60px;
-    left: 15%;
-    top: 54%;
+    position: absolute;
+    width: 70%;
+    height: 8%;
+    left: 14.73%;
+    top: 52%;
 
     font-family: "Poppins", sans-serif;
     font-style: normal;
     font-weight: 600;
-    font-size: 48px;
+    font-size: 3em;
     line-height: 72px;
     text-align: center;
 
@@ -121,8 +117,8 @@
     top: 66%;
     filter: drop-shadow(8px 8px 4px rgba(0, 0, 0, 0.25));
 }
-
+/* 
 .centericon::before {
     width: 66.66vh;
     height: 66.66vh;
-}
+} */
