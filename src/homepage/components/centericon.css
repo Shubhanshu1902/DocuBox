@@ -10,8 +10,100 @@
     box-sizing: border-box;
     border-radius: 50%;
 }
+/* 
+@keyframes */
 
-.centericon::before{
+.upperlock img {
+    position: absolute;
+    width: 48%;
+    left: 23.75%;
+    top: 4%;
+    filter: drop-shadow(8px 8px 4px rgba(0, 0, 0, 0.25));
+}
+
+.docubox {
+    position: absolute;
+    width: 39.84vw;
+    height: 20vh;
+    left: 2.5%;
+    top: 28%;
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 144px;
+    line-height: 216px;
+    /* identical to box height */
+
+    text-align: center;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+    color: #2b2c34;
+    user-select: none;
+
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.box {
+    position: absolute;
+    width: 14.68vw;
+    height: 13vh;
+    left: 55.67%;
+    top: 23%;
+    border: 5px solid #2a2c34;
+    box-sizing: border-box;
+}
+
+.intro {
+    position: absolute;
+
+    position: absolute;
+    width: 30vw;
+    height: 60px;
+    left: 15%;
+    top: 48%;
+
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 48px;
+    line-height: 72px;
+    text-align: center;
+
+    color: #2a2c34;
+
+    text-shadow: 0px 8px 4px rgba(0, 0, 0, 0.25);
+}
+
+.intro-sol {
+    position: absolute;
+
+    position: absolute;
+    width: 30vw;
+    height: 60px;
+    left: 15%;
+    top: 54%;
+
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 48px;
+    line-height: 72px;
+    text-align: center;
+
+    color: #2a2c34;
+
+    text-shadow: 0px 8px 4px rgba(0, 0, 0, 0.25);
+}
+
+.lowerlock img {
+    position: relative;
+    width: 54%;
+    left: 39%;
+    top: 66%;
+    filter: drop-shadow(8px 8px 4px rgba(0, 0, 0, 0.25));
+}
+
+.centericon::before {
     width: 66.66vh;
     height: 66.66vh;
 }
