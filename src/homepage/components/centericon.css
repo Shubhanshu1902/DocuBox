@@ -10,8 +10,10 @@
     box-sizing: border-box;
     border-radius: 50%;
 }
-/* 
-@keyframes */
+
+@keyframes centericon{
+    
+}
 
 .upperlock img {
     position: absolute;
