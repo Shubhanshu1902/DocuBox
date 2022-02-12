@@ -1,0 +1,17 @@
+.centericon {
+    display: flex;
+    position: relative;
+    width: 87.65vh;
+    height: 87.65vh;
+    left: 28.1%;
+    top: 7.22vh;
+    background-color: transparent;
+    border: 8px solid #00c2ff;
+    box-sizing: border-box;
+    border-radius: 50%;
+}
+
+.centericon::before{
+    width: 66.66vh;
+    height: 66.66vh;
+}

@@ -1,0 +1,12 @@
+.bggradient {
+    position: absolute;
+    width: 104.7vw;
+    height: 177.5vh;
+    left: -30vw;
+    top: -39vh;
+    background: linear-gradient(
+        90deg,
+        #ee2b2b 3.79%,
+        rgba(254, 254, 254, 0) 100%
+    );
+}
