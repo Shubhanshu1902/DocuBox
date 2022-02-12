@@ -16,6 +16,30 @@
 
 } */
 
+@keyframes openingText
+{
+    0%{
+        text-shadow: none;
+        color: #2a2c3400;
+    }
+    100%
+    {
+        text-shadow: 0px 8px 4px rgba(0, 0, 0, 0.25);
+        color: #2a2c34;
+    }
+}
+@keyframes box
+{
+    0%
+    {
+        border: 5px solid #2a2c3400;
+    }
+    100%
+    {
+        border: 5px solid #2a2c34;
+    }
+}
+
 .upperlock img {
     position: absolute;
     width: 30%;
