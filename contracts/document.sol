@@ -31,10 +31,8 @@ contract document{
     
 
     // Upload(docum) : particular_docs[(this.address)] -> docum
-    function upload(string memory docum , string memory docType) public view{
-        // users[msg.sender].docs.push(docum);
-        // users[msg.sender].docs[users[msg.sender].nDocs++].type_name = docType;
-        // users[msg.sender].docs[msg.sender.nDocs++].hash_data = docum;
+    function upload(string memory docum , string memory docType) public view{ // vm error : revert ..... why ? no but why?.....i need help
+        
 
         user memory sender = users[msg.sender];
         bool flagExists = false;
