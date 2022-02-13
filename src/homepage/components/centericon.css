@@ -1,16 +1,13 @@
 
 .centericon {
     display: flex;
-    position: absolute;
-    width: 87.65vh;
-    height: 87.65vh;
-    left: 28.3vw;
-    top: 7.22vh;
-    background-color: transparent;
+    width: 100%;
+    height: 100%;
     border: 8px solid #00c2ff;
     box-sizing: border-box;
     border-radius: 50%;
-    font-size: 16px
+    font-size: 16px;
+    font-family: "Poppins", sans-serif;
 }
 @keyframes openingText
 {
@@ -35,25 +32,14 @@
         border: 5px solid #2a2c34;
     }
 }
-.upperlock img {
-    position: absolute;
+.lock {
     width: 40%;
-    left: 30%;
-    padding-top: 6%;
     filter: drop-shadow(8px 8px 4px rgba(0, 0, 0, 0.25));
 }
 
 .docubox {
-    position: absolute;
-    width: 79.4%;
-    height: 22.8%;
-    left: 9.5%;
-    top: 22%;
-    font-family: "Poppins", sans-serif;
-    font-style: normal;
     font-weight: 900;
-    font-size: 9em;
-    line-height: 216px;
+    font-size: 8em;
     /* identical to box height */
     text-align: center;
     color: #2b2c34;
@@ -64,61 +50,16 @@
 }
 
 .box {
-    position: absolute;
-    width: 43%;
-    height: 70%;
-    left: 57%;
-    top: 25.5%;
     border: 5px solid #2a2c34;
-    box-sizing: border-box;
     animation: box 4s;
 }
 
 .intro {
-    position: absolute;
-    width: 70%;
-    height: 8%;
-    left: 14.73%;
-    top: 44%;
-
-    font-family: "Poppins", sans-serif;
     font-style: normal;
     font-weight: 600;
-    font-size: 48px;
-    line-height: 72px;
+    font-size: 35px;
+    line-height: 40px;
     text-align: center;
-
     animation: openingText 4s;
     text-shadow: 0px 8px 4px rgba(0, 0, 0, 0.25);
 }
-
-.intro-sol {
-    position: absolute;
-    width: 70%;
-    height: 8%;
-    left: 14.73%;
-    top: 52%;
-
-    font-family: "Poppins", sans-serif;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 3em;
-    line-height: 72px;
-    text-align: center;
-
-    animation: openingText 4s;
-    text-shadow: 0px 8px 4px rgba(0, 0, 0, 0.25);
-}
-
-.lowerlock img {
-    position: relative;
-    width: 50%;
-    left: 37%;
-    top: 66%;
-    filter: drop-shadow(8px 8px 4px rgba(0, 0, 0, 0.25));
-}
-/* 
-.centericon::before {
-    width: 66.66vh;
-    height: 66.66vh;
-} */
