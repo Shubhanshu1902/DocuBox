@@ -10,7 +10,7 @@ const Navbar_ = () => {
             <Link to="/home">
                 <button type="button">Home</button>
             </Link>
-            <button>FAQs</button>
+            <button>Login</button>
         </div>
     );
 };

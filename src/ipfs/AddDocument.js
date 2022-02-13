@@ -6,7 +6,6 @@ import { Link, Route } from "react-router-dom";
 import { ethers } from "ethers";
 import document from "./document.json";
 
-
 const client = create({
     host: "ipfs.infura.io",
     port: 5001,
@@ -19,8 +18,8 @@ class AddDocument extends Component {
         super(props);
         this.state = { buffer: null, filetype: null, fileHash: null };
     }
-    
-    documentAddress = '0x5FbDB2315678afecb367f032d93F642f64180aa3'
+
+    documentAddress = "0x5FbDB2315678afecb367f032d93F642f64180aa3";
 
     getTitle = event => {
         event.preventDefault();
@@ -42,26 +41,27 @@ class AddDocument extends Component {
         };
     };
 
-    requestAccount = async() => {
-        await window.ethereum.request({ method: 'eth_requestAccounts' });
-    }
+    requestAccount = async () => {
+        await window.ethereum.request({ method: "eth_requestAccounts" });
+    };
 
     uploadDocument = async () => {
         if (!this.state.fileHash) return;
         if (!this.state.filetype) return;
         if (typeof window !== "undefined") {
             await this.requestAccount();
-            const provider = new ethers.providers.Web3Provider(
-                window.ethereum
-            );
+            const provider = new ethers.providers.Web3Provider(window.ethereum);
             const signer = provider.getSigner();
             console.log(signer);
             const contract = new ethers.Contract(
                 this.documentAddress,
                 document.abi,
                 signer
-            );  
-            const transaction = await contract.upload(this.state.fileHash, this.state.filetype);
+            );
+            const transaction = await contract.upload(
+                this.state.fileHash,
+                this.state.filetype
+            );
             await transaction.wait();
 
             console.log("File Uploaded");
@@ -76,7 +76,7 @@ class AddDocument extends Component {
             const created = await client.add(this.state.buffer);
             this.setState({ fileHash: created.path });
             this.url = this.url + this.state.fileHash;
-            await this.uploadDocument()
+            await this.uploadDocument();
             console.log(this.state);
         } catch (error) {
             console.error(error);
@@ -108,7 +108,7 @@ class AddDocument extends Component {
                                 <input
                                     type="button"
                                     value="submit"
-                                    onClick={this.onSubmit}
+                                    onClick={this.onSubmit()}
                                 />
                             </Link>
                         </div>
