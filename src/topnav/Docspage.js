@@ -2,17 +2,24 @@ import React from "react";
 import PermanentDrawerLeft from "./PermanantLeftDrawer";
 import StatNavbar from "./StatNavbar";
 
-import './Docspage.css'
+import "./Docspage.css";
+import PermanantLeftDrawer from "./PermanantLeftDrawer";
+// import { Box } from "@mui/system";
 
 const Docspage = () => {
     return (
         <div>
-            <div>
-                <StatNavbar />
-            </div>
+            <StatNavbar />
+            
+            <div className="docpage">
+                <PermanantLeftDrawer />
 
-            <div className="leftdrawer">
-                <PermanentDrawerLeft />
+                <div className="titleofdoc">
+                    My Docs
+                    <hr />
+                </div>
+
+
             </div>
         </div>
     );

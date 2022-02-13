@@ -4,7 +4,6 @@ import { create } from "ipfs-http-client";
 import { TextField } from "@mui/material";
 import { Box } from "@mui/system";
 
-
 const client = create({
     host: "ipfs.infura.io",
     port: 5001,
@@ -13,20 +12,6 @@ const client = create({
 });
 
 class AddDocument extends Component {
-    styles = theme => ({
-        textField: {
-            width: "90%",
-            marginLeft: "auto",
-            marginRight: "auto",
-            paddingBottom: 0,
-            marginTop: 0,
-            fontWeight: 500,
-        },
-        input: {
-            color: "white",
-        },
-    });
-
     constructor(props) {
         super(props);
         this.state = { buffer: null, filetype: null, fileHash: null };
@@ -51,11 +36,14 @@ class AddDocument extends Component {
         };
     };
 
+    url = "https://ipfs.infura.io/ipfs/";
+
     onSubmit = async e => {
         e.preventDefault();
         try {
             const created = await client.add(this.state.buffer);
             this.setState({ fileHash: created.path });
+            this.url = this.url + this.state.fileHash;
             console.log(this.state);
         } catch (error) {
             console.error(error);
@@ -66,9 +54,16 @@ class AddDocument extends Component {
         return (
             <div>
                 <form onSubmit={this.onSubmit}>
+                    <input
+                        type="text"
+                        value={this.state.filetype}
+                        onChange={this.getTitle}
+                    />
                     <input type="file" onChange={this.captureFile} />
                     <input type="submit" />
                 </form>
+
+                <img src={this.url} alt = 'image' />
             </div>
         );
     }

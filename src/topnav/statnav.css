@@ -23,11 +23,13 @@
     /* left: 2.3%; */
 }
 
-.left {
+
+.topnav Button {
     position: relative;
     width: 118px;
     height: 36px;
     float: left;
+    text-transform: none;
     top: 37%;
     background-color: transparent;
     border: 0px;
@@ -36,28 +38,9 @@
     font-weight: normal;
     font-size: 24px;
     line-height: 36px;
-}
-
-.topnav button:hover{
-    transform: scale(1.2);
-}
-
-.right {
-    position: absolute;
-    width: 200px;
-    height: 36px;
-    float: right;
-    /* right: 100vw; */
-    top: 37%;
-
-    font-family: "Poppins", sans-serif;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 24px;
-    line-height: 36px;
-    /* identical to box height */
-
-    text-align: center;
-
     color: #2a2c34;
+}
+
+.topnav Button:hover{
+    transform: scale(1.2);
 }
