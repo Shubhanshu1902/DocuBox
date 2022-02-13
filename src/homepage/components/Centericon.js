@@ -6,13 +6,6 @@ import lowerlock from "../../images/lowerlock.png";
 const cirleradius = 947/1080 * window.innerHeight;
 
 const Centericon = () => {
-
-    const [radius,setRadius] = useState(radius);
-
-    
-    while(true && )
-
-
     const BoxText = () => {
         return (
             <div className="box">Box</div>
