@@ -7,18 +7,13 @@ const cirleradius = 947/1080 * window.innerHeight;
 
 const Centericon = () => {
 
-    const [radius,setRadius] = useState(radius);
-
-    
-    while(true && )
-
-
     const BoxText = () => {
         return (
             <div className="box">Box</div>
         )
     }
     return (
+        
         <div style={{ width: cirleradius, height: cirleradius, display: 'flex', alignItems: 'center', justifyContent: 'center', }}>
             <div className="centericon" style={{ alignItems: 'center', flexDirection: 'column', justifyContent: 'center' }}>
                 <img className="lock" src={upperlock} alt="upperlock" />
