@@ -2,6 +2,8 @@ import React from "react";
 import PermanentDrawerLeft from "./PermanantLeftDrawer";
 import StatNavbar from "./StatNavbar";
 
+import './Docspage.css'
+
 const Docspage = () => {
     return (
         <div>

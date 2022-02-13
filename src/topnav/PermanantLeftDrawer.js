@@ -9,6 +9,7 @@ import TopicIcon from "@mui/icons-material/Topic";
 import DevicesIcon from "@mui/icons-material/Devices";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import { makeStyles } from "@mui/styles";
+import { height, padding } from "@mui/system";
 
 const drawerWidth = 300;
 
@@ -19,7 +20,9 @@ const useStyles = makeStyles({
   },
   drawer: {
     width: drawerWidth,
-    top: '36'
+    top: '168px',
+    height: 'calc(100% - 168px)',
+    // paddingTop: '168px'
   },
   drawerpaper:{
     width: drawerWidth,
@@ -43,7 +46,7 @@ export default function PermanentDrawerLeft() {
               <ListItemIcon>
                 {index % 3 === 0 ? (
                   <TopicIcon />
-                ) : index % 3 == 1 ? (
+                ) : index % 3 === 1 ? (
                   <DevicesIcon />
                 ) : (
                   <FavoriteIcon />

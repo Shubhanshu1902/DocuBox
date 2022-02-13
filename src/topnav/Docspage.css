@@ -1,4 +1,8 @@
 .leftdrawer{
-    display: flex;
-    top: 36px;
+    position: relative;
+    height: calc(100vh - 168px);
+    width: 100%;
+    top: 168px;
+
+
 }
