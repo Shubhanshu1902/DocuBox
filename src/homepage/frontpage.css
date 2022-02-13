@@ -2,9 +2,5 @@
     position: fixed;
     height: 100vh;
     width: 100vw;
-    background: linear-gradient(
-        90deg,
-        #ee2b2b 3.79%,
-        rgba(254, 254, 254, 0) 100%
-    );
+    background: linear-gradient(90deg, #8871D9 3.79%, rgba(254, 254, 254, 0) 100%);
 }

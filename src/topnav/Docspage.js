@@ -19,7 +19,6 @@ const Docspage = () => {
                     <hr />
                 </div>
 
-
             </div>
         </div>
     );

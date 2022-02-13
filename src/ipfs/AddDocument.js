@@ -2,6 +2,10 @@ import React, { Component } from "react";
 import { Buffer } from "buffer";
 import { create } from "ipfs-http-client";
 import "./AddDocumnet.css";
+import { Link, Route } from "react-router-dom";
+import { ethers } from "ethers";
+import document from "document.json";
+
 
 const client = create({
     host: "ipfs.infura.io",
@@ -14,6 +18,7 @@ class AddDocument extends Component {
     constructor(props) {
         super(props);
         this.state = { buffer: null, filetype: null, fileHash: null };
+        const documentAddress = '0x5FbDB2315678afecb367f032d93F642f64180aa3'
     }
 
     getTitle = event => {
@@ -36,6 +41,28 @@ class AddDocument extends Component {
         };
     };
 
+    uploadDocument = async () => {
+        if (!this.state.fileHash) return;
+        if (!this.state.filetype) return;
+        if (typeof window !== "undefined") {
+            await requestAccount();
+            const provider = new ethers.providers.Web3Provider(
+                window,
+                ethereum
+            );
+            const signer = provider.getSigner();
+            const contract = new ethers.Contract(
+                this.documentAddress,
+                document.abi,
+                signer
+            );  
+            const transaction = await contract.upload(hashVal, docType);
+            await transaction.wait();
+
+            console.log("File Uploaded");
+        }
+    };
+
     url = "https://ipfs.infura.io/ipfs/";
 
     onSubmit = async e => {
@@ -52,30 +79,35 @@ class AddDocument extends Component {
 
     render() {
         return (
-            <div class="center">
-                <h1>Welcome to DocuBox</h1>
-                <form>
-                    <div class="inputbox">
+            <div className="main">
+                <div className="center-add">
+                    <h1>Welcome to DocuBox</h1>
+                    <form>
+                        <div className="inputbox">
+                            <input
+                                type="text"
+                                required="required"
+                                onChange={this.getTitle}
+                            />
+                            <span>File type</span>
+                        </div>
                         <input
-                            type="text"
+                            type="file"
                             required="required"
-                            onChange={this.getTitle}
+                            onChange={this.captureFile}
                         />
-                        <span>File type</span>
-                    </div>
-                    <input
-                        type="file"
-                        required="required"
-                        onChange={this.captureFile}
-                    />
-                    <div class="inputbox">
-                        <input
-                            type="button"
-                            value="submit"
-                            onClick={this.onSubmit}
-                        />
-                    </div>
-                </form>
+
+                        <div class="inputbox">
+                            <Link to="/home">
+                                <input
+                                    type="button"
+                                    value="submit"
+                                    onClick={this.onSubmit}
+                                />
+                            </Link>
+                        </div>
+                    </form>
+                </div>
             </div>
         );
     }
