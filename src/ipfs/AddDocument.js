@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import { Buffer } from "buffer";
 import { create } from "ipfs-http-client";
-import { TextField } from "@mui/material";
-import { Box } from "@mui/system";
+import "./AddDocumnet.css";
 
 const client = create({
     host: "ipfs.infura.io",
@@ -29,6 +28,7 @@ class AddDocument extends Component {
 
         const file = event.target.files[0];
         // console.log(file);
+
         const reader = new window.FileReader();
         reader.readAsArrayBuffer(file);
         reader.onloadend = () => {
@@ -52,18 +52,30 @@ class AddDocument extends Component {
 
     render() {
         return (
-            <div>
-                <form onSubmit={this.onSubmit}>
+            <div class="center">
+                <h1>Welcome to DocuBox</h1>
+                <form>
+                    <div class="inputbox">
+                        <input
+                            type="text"
+                            required="required"
+                            onChange={this.getTitle}
+                        />
+                        <span>File type</span>
+                    </div>
                     <input
-                        type="text"
-                        value={this.state.filetype}
-                        onChange={this.getTitle}
+                        type="file"
+                        required="required"
+                        onChange={this.captureFile}
                     />
-                    <input type="file" onChange={this.captureFile} />
-                    <input type="submit" />
+                    <div class="inputbox">
+                        <input
+                            type="button"
+                            value="submit"
+                            onClick={this.onSubmit}
+                        />
+                    </div>
                 </form>
-
-                <img src={this.url} alt = 'image' />
             </div>
         );
     }

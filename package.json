@@ -24,6 +24,7 @@
     "react-drag-drop-files": "^2.3.3",
     "react-dropzone-uploader": "^2.11.0",
     "react-scripts": "4.0.1 ",
+    "sass": "^1.49.7",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
