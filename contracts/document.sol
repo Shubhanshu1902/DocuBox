@@ -66,6 +66,8 @@ contract document{
         users[msg.sender].docs[docType] = docum;
         totalDocs++;
 
+        // For now if same type entered, it replaces old doc corresponding to the type
+
 
     }   
 
@@ -87,6 +89,9 @@ contract document{
 
         // require(flagExists, 'No such Document exists');
         // return sender.docs[docLocation].hash_data;
+        // string memory s = users[msg.sender].docs[docType];
+        // if (s)
+        if (keccak256(bytes(users[msg.sender].docs[docType])) == keccak256(bytes(''))){return '-1';}
 
         return users[msg.sender].docs[docType];
 

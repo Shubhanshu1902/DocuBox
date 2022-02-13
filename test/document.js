@@ -38,11 +38,18 @@ describe('Document contract', ()=>{
             d2a = await doc.connect(user2).download('a');
             d1b = await doc.connect(user1).download('b');
             d2c = await doc.connect(user2).download('c');
+            
+            console.log(d1a);
+            console.log(d1b);
+            console.log(d2a);
+            console.log(d2c);
+
 
             expect(d1a).to.equal('abc');
             expect(d1b).to.equal('bcd');
             expect(d2a).to.equal('cde');
             expect(d2c).to.equal('def');
+            
         });
     });
 });
