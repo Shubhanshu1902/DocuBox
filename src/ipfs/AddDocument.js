@@ -4,7 +4,7 @@ import { create } from "ipfs-http-client";
 import "./AddDocumnet.css";
 import { Link, Route } from "react-router-dom";
 import { ethers } from "ethers";
-import document from "document.json";
+import document from "./document.json";
 
 
 const client = create({
@@ -18,8 +18,9 @@ class AddDocument extends Component {
     constructor(props) {
         super(props);
         this.state = { buffer: null, filetype: null, fileHash: null };
-        const documentAddress = '0x5FbDB2315678afecb367f032d93F642f64180aa3'
     }
+    
+    documentAddress = '0x5FbDB2315678afecb367f032d93F642f64180aa3'
 
     getTitle = event => {
         event.preventDefault();
@@ -41,22 +42,26 @@ class AddDocument extends Component {
         };
     };
 
+    requestAccount = async() => {
+        await window.ethereum.request({ method: 'eth_requestAccounts' });
+    }
+
     uploadDocument = async () => {
         if (!this.state.fileHash) return;
         if (!this.state.filetype) return;
         if (typeof window !== "undefined") {
-            await requestAccount();
+            await this.requestAccount();
             const provider = new ethers.providers.Web3Provider(
-                window,
-                ethereum
+                window.ethereum
             );
             const signer = provider.getSigner();
+            console.log(signer);
             const contract = new ethers.Contract(
                 this.documentAddress,
                 document.abi,
                 signer
             );  
-            const transaction = await contract.upload(hashVal, docType);
+            const transaction = await contract.upload(this.state.fileHash, this.state.filetype);
             await transaction.wait();
 
             console.log("File Uploaded");
@@ -71,6 +76,7 @@ class AddDocument extends Component {
             const created = await client.add(this.state.buffer);
             this.setState({ fileHash: created.path });
             this.url = this.url + this.state.fileHash;
+            await this.uploadDocument()
             console.log(this.state);
         } catch (error) {
             console.error(error);

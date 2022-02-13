@@ -14,7 +14,7 @@ async function main() {
         address: doc.address,
         abi: JSON.parse(doc.interface.format('json'))
     };
-    fs.writeFileSync('src/document.json' , JSON.stringify(data));
+    fs.writeFileSync('src/ipfs/document.json' , JSON.stringify(data));
 
 }
 
